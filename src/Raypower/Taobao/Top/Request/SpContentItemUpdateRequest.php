@@ -1,11 +1,11 @@
 <?php namespace Raypower\Taobao\Top\Request;
 /**
- * TOP API: taobao.sp.content.graphic.publish request
+ * TOP API: taobao.sp.content.item.update request
  * 
  * @author auto create
  * @since 1.0, 2014-09-26 12:58:31
  */
-class SpContentGraphicPublishRequest
+class SpContentItemUpdateRequest
 {
 	/** 
 	 * 内容的自定义分类，数值为文本内容，主要用于区分内容的分类（譬如连衣裙、T恤、阿迪达斯等），分类名称的长度限制为(0,5] (单位是字符，不区分中英文)，分类名称中不能包含非法内容，且一个站点下所拥有的总自定义分类数量不能超过16个<br /> 支持最大长度为：5<br /> 支持的最大列表长度为：5
@@ -13,22 +13,13 @@ class SpContentGraphicPublishRequest
 	private $classname;
 	
 	/** 
-	 * 图文内容，Json格式的数据。
-必须是数组类型元素列表。展示时每一个元素会单独一行显示。
-type: 表示图文元素的类型，目前支持3种类型的元素
-1:text;文本元素；
-2:image;图片元素；
-3:item;宝贝元素；
-
-value:表示图文类型的元素值。
-当类型为text时，value值就是文本类型字符串；
-当类型为image时，value值就是图片地址;
-当类型为item时，value值就是宝贝ID;
+	 * 内容的推荐理由。数值为文本内容,推荐理由的长度限制为[0,140](单位是字符，不区分中英文)，推荐理由中不能含有非法内容，不能含有恶意脚本<br /> 支持最大长度为：140<br /> 支持的最大列表长度为：140
 	 **/
-	private $contents;
+	private $comments;
 	
 	/** 
-	 * 封面图片地址 图文的封面尺寸不能低于680*680，否则该条图文将无法同步至微淘 图片地址必须匹配正则表达式:http://(img01|img02|img03|img04|img1|img2|img3|img4)\.(taobaocdn|tbcdn)\.(com|net|cn).*
+	 * 封面图片地址
+图片地址必须匹配正则表达式:http://(img01|img02|img03|img04|img1|img2|img3|img4)\.(taobaocdn|tbcdn)\.(com|net|cn).*
 	 **/
 	private $coverpicurl;
 	
@@ -38,9 +29,14 @@ value:表示图文类型的元素值。
 	private $detailurl;
 	
 	/** 
-	 * 是否要发送到微淘广播流
+	 * 内容ID
 	 **/
-	private $intimeline;
+	private $id;
+	
+	/** 
+	 * 宝贝ID
+	 **/
+	private $itemId;
 	
 	/** 
 	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
@@ -71,15 +67,15 @@ value:表示图文类型的元素值。
 		return $this->classname;
 	}
 
-	public function setContents($contents)
+	public function setComments($comments)
 	{
-		$this->contents = $contents;
-		$this->apiParas["contents"] = $contents;
+		$this->comments = $comments;
+		$this->apiParas["comments"] = $comments;
 	}
 
-	public function getContents()
+	public function getComments()
 	{
-		return $this->contents;
+		return $this->comments;
 	}
 
 	public function setCoverpicurl($coverpicurl)
@@ -104,15 +100,26 @@ value:表示图文类型的元素值。
 		return $this->detailurl;
 	}
 
-	public function setIntimeline($intimeline)
+	public function setId($id)
 	{
-		$this->intimeline = $intimeline;
-		$this->apiParas["intimeline"] = $intimeline;
+		$this->id = $id;
+		$this->apiParas["id"] = $id;
 	}
 
-	public function getIntimeline()
+	public function getId()
 	{
-		return $this->intimeline;
+		return $this->id;
+	}
+
+	public function setItemId($itemId)
+	{
+		$this->itemId = $itemId;
+		$this->apiParas["item_id"] = $itemId;
+	}
+
+	public function getItemId()
+	{
+		return $this->itemId;
 	}
 
 	public function setSiteKey($siteKey)
@@ -150,7 +157,7 @@ value:表示图文类型的元素值。
 
 	public function getApiMethodName()
 	{
-		return "taobao.sp.content.graphic.publish";
+		return "taobao.sp.content.item.update";
 	}
 	
 	public function getApiParas()
@@ -163,8 +170,11 @@ value:表示图文类型的元素值。
 		
 		RequestCheckUtil::checkNotNull($this->classname,"classname");
 		RequestCheckUtil::checkMaxLength($this->classname,5,"classname");
-		RequestCheckUtil::checkNotNull($this->contents,"contents");
+		RequestCheckUtil::checkNotNull($this->comments,"comments");
+		RequestCheckUtil::checkMaxLength($this->comments,140,"comments");
 		RequestCheckUtil::checkNotNull($this->detailurl,"detailurl");
+		RequestCheckUtil::checkNotNull($this->id,"id");
+		RequestCheckUtil::checkNotNull($this->itemId,"itemId");
 		RequestCheckUtil::checkNotNull($this->siteKey,"siteKey");
 		RequestCheckUtil::checkMaxLength($this->siteKey,32,"siteKey");
 		RequestCheckUtil::checkNotNull($this->title,"title");

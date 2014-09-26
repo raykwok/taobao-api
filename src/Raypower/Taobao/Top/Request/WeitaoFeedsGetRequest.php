@@ -3,7 +3,7 @@
  * TOP API: taobao.weitao.feeds.get request
  * 
  * @author auto create
- * @since 1.0, 2014-06-25 16:37:06
+ * @since 1.0, 2014-09-26 12:58:31
  */
 class WeitaoFeedsGetRequest
 {

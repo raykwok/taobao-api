@@ -1,11 +1,11 @@
 <?php namespace Raypower\Taobao\Top\Request;
 /**
- * TOP API: taobao.sp.item.list.get request
+ * TOP API: taobao.sp.item.info.list.advanced.get request
  * 
  * @author auto create
  * @since 1.0, 2014-09-26 12:58:31
  */
-class SpItemListGetRequest
+class SpItemInfoListAdvancedGetRequest
 {
 	/** 
 	 * 商品所在地:省名
@@ -16,11 +16,6 @@ class SpItemListGetRequest
 	 * 标准商品后台类目id。该ID可以通过taobao.itemcats.get接口获取到。
 	 **/
 	private $cid;
-	
-	/** 
-	 * 30天成交笔数(上限)
-	 **/
-	private $endBiz30day;
 	
 	/** 
 	 * 佣金比率上限，如：2345表示23.45%。注：start_commissionRate和end_commissionRate一起设置才有效。
@@ -38,27 +33,12 @@ class SpItemListGetRequest
 	private $endPrice;
 	
 	/** 
-	 * 是否支持货到付款，设置为true表示该商品支持货到付款，设置为false或不设置表示不判断这个属性
-	 **/
-	private $hdfk;
-	
-	/** 
-	 * 是否支持假一赔三，设置为true表示该商品支持假一赔三，设置为false或不设置表示不判断这个属性
-	 **/
-	private $jyps;
-	
-	/** 
 	 * 商品标题中包含的关键字. 注意:查询时keyword,cid至少选择其中一个参数
 	 **/
 	private $keyword;
 	
 	/** 
-	 * 是否免邮费，设置为true表示该商品免邮，设置为false或不设置表示不判断这个属性
-	 **/
-	private $myf;
-	
-	/** 
-	 * 结果页数.
+	 * 结果页数
 	 **/
 	private $pageNo;
 	
@@ -66,11 +46,6 @@ class SpItemListGetRequest
 	 * 每页返回结果数.最大每页40
 	 **/
 	private $pageSize;
-	
-	/** 
-	 * 是否支持七天退换，设置为true表示该商品支持七天退换，设置为false或不设置表示不判断这个属性
-	 **/
-	private $qtth;
 	
 	/** 
 	 * 站点key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
@@ -81,11 +56,6 @@ class SpItemListGetRequest
 	 * price_asc: 价格从低到高, 默认为折扣价格; sales_desc:销量从高到低; credit_desc:信用从高到低
 	 **/
 	private $sort;
-	
-	/** 
-	 * 30天成交笔数, 下限
-	 **/
-	private $startBiz30day;
 	
 	/** 
 	 * 佣金比率下限，如：1234表示12.34%
@@ -106,16 +76,6 @@ class SpItemListGetRequest
 	 * 是否商城的商品，设置为true表示该商品是属于淘宝商城的商品，设置为false或不设置表示不判断这个属性
 	 **/
 	private $tmallItem;
-	
-	/** 
-	 * 是否支持消费者保障，设置为true表示该商品支持消费者保障，设置为false或不设置表示不判断这个属性
-	 **/
-	private $xfzbz;
-	
-	/** 
-	 * 是否支持正品保障，设置为true表示该商品支持正品保障，设置为false或不设置表示不判断这个属性
-	 **/
-	private $zpbz;
 	
 	private $apiParas = array();
 	
@@ -139,17 +99,6 @@ class SpItemListGetRequest
 	public function getCid()
 	{
 		return $this->cid;
-	}
-
-	public function setEndBiz30day($endBiz30day)
-	{
-		$this->endBiz30day = $endBiz30day;
-		$this->apiParas["end_biz30day"] = $endBiz30day;
-	}
-
-	public function getEndBiz30day()
-	{
-		return $this->endBiz30day;
 	}
 
 	public function setEndCommissionRate($endCommissionRate)
@@ -185,28 +134,6 @@ class SpItemListGetRequest
 		return $this->endPrice;
 	}
 
-	public function setHdfk($hdfk)
-	{
-		$this->hdfk = $hdfk;
-		$this->apiParas["hdfk"] = $hdfk;
-	}
-
-	public function getHdfk()
-	{
-		return $this->hdfk;
-	}
-
-	public function setJyps($jyps)
-	{
-		$this->jyps = $jyps;
-		$this->apiParas["jyps"] = $jyps;
-	}
-
-	public function getJyps()
-	{
-		return $this->jyps;
-	}
-
 	public function setKeyword($keyword)
 	{
 		$this->keyword = $keyword;
@@ -216,17 +143,6 @@ class SpItemListGetRequest
 	public function getKeyword()
 	{
 		return $this->keyword;
-	}
-
-	public function setMyf($myf)
-	{
-		$this->myf = $myf;
-		$this->apiParas["myf"] = $myf;
-	}
-
-	public function getMyf()
-	{
-		return $this->myf;
 	}
 
 	public function setPageNo($pageNo)
@@ -251,17 +167,6 @@ class SpItemListGetRequest
 		return $this->pageSize;
 	}
 
-	public function setQtth($qtth)
-	{
-		$this->qtth = $qtth;
-		$this->apiParas["qtth"] = $qtth;
-	}
-
-	public function getQtth()
-	{
-		return $this->qtth;
-	}
-
 	public function setSiteKey($siteKey)
 	{
 		$this->siteKey = $siteKey;
@@ -282,17 +187,6 @@ class SpItemListGetRequest
 	public function getSort()
 	{
 		return $this->sort;
-	}
-
-	public function setStartBiz30day($startBiz30day)
-	{
-		$this->startBiz30day = $startBiz30day;
-		$this->apiParas["start_biz30day"] = $startBiz30day;
-	}
-
-	public function getStartBiz30day()
-	{
-		return $this->startBiz30day;
 	}
 
 	public function setStartCommissionRate($startCommissionRate)
@@ -339,31 +233,9 @@ class SpItemListGetRequest
 		return $this->tmallItem;
 	}
 
-	public function setXfzbz($xfzbz)
-	{
-		$this->xfzbz = $xfzbz;
-		$this->apiParas["xfzbz"] = $xfzbz;
-	}
-
-	public function getXfzbz()
-	{
-		return $this->xfzbz;
-	}
-
-	public function setZpbz($zpbz)
-	{
-		$this->zpbz = $zpbz;
-		$this->apiParas["zpbz"] = $zpbz;
-	}
-
-	public function getZpbz()
-	{
-		return $this->zpbz;
-	}
-
 	public function getApiMethodName()
 	{
-		return "taobao.sp.item.list.get";
+		return "taobao.sp.item.info.list.advanced.get";
 	}
 	
 	public function getApiParas()

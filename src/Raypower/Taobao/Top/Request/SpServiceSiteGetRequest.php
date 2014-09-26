@@ -1,18 +1,18 @@
 <?php namespace Raypower\Taobao\Top\Request;
 /**
- * TOP API: taobao.weitao.menu.delete request
+ * TOP API: taobao.sp.service.site.get request
  * 
  * @author auto create
  * @since 1.0, 2014-09-26 12:58:31
  */
-class WeitaoMenuDeleteRequest
+class SpServiceSiteGetRequest
 {
 	
 	private $apiParas = array();
 	
 	public function getApiMethodName()
 	{
-		return "taobao.weitao.menu.delete";
+		return "taobao.sp.service.site.get";
 	}
 	
 	public function getApiParas()

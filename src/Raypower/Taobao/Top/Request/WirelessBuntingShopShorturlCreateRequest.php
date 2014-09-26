@@ -1,18 +1,33 @@
 <?php namespace Raypower\Taobao\Top\Request;
 /**
- * TOP API: taobao.weitao.menu.delete request
+ * TOP API: taobao.wireless.bunting.shop.shorturl.create request
  * 
  * @author auto create
  * @since 1.0, 2014-09-26 12:58:31
  */
-class WeitaoMenuDeleteRequest
+class WirelessBuntingShopShorturlCreateRequest
 {
+	/** 
+	 * 商店id
+	 **/
+	private $shopId;
 	
 	private $apiParas = array();
 	
+	public function setShopId($shopId)
+	{
+		$this->shopId = $shopId;
+		$this->apiParas["shop_id"] = $shopId;
+	}
+
+	public function getShopId()
+	{
+		return $this->shopId;
+	}
+
 	public function getApiMethodName()
 	{
-		return "taobao.weitao.menu.delete";
+		return "taobao.wireless.bunting.shop.shorturl.create";
 	}
 	
 	public function getApiParas()

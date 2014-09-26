@@ -3,58 +3,12 @@
  * TOP API: taobao.weitao.menu.create request
  * 
  * @author auto create
- * @since 1.0, 2014-06-25 16:37:06
+ * @since 1.0, 2014-09-26 12:58:31
  */
 class WeitaoMenuCreateRequest
 {
 	/** 
-	 * [{
-    "name": "来吧少年",
-    "sub_button": [
-    {
-        "features": 
-        {
-            "3": "1388726770350003001",
-            "2": "1388726770350003001",
-            "1": "1388726770350003001",
-            "0": "1388726770350003001",
-            "4": "1388726770350003001"
-        },
-        "name": "来吧少年快点击",
-        "type": "click"
-    },
-    {
-        "name": "来吧少年新网面",
-        "type": "view",
-        "url": "http://www.taobao.com"
-    }]
-}, 
-{
-    "name": "来吧妹纸",
-    "sub_button": [
-    {
-        "features":
-         {
-            "3": "1388726414653004002",
-            "2": "1388726414653004002",
-            "1": "1388726414653004002",
-            "0": "1388726414653004002",
-            "4": "1388726414653004002"
-        },
-        "name": "来吧妹纸快点",
-        "type": "click"
-    }, 
-    {
-        "name": "来吧妹纸新网页",
-        "type": "view",
-        "url": "http://www.taobao.com"
-    }]
- },
- {
-    "name": "阿加西",
-    "type": "view",
-    "url": "http://www.taobao.com"
-}]
+	 * 支持的type共4种，宝贝分类、h5 url、wangwang和tel，具体见示例：[{ "name": "宝贝分类", "sub_button": [ { "name": "新品", "type": "shopCat", "catId": "111111" }, { "name": "特惠宝贝", "type": "shopCat", "catId": "213214" }, { "name": "特惠宝贝", "type": "shopCat", "catId": "21342435" }] }, { "name": "活动", "sub_button": [  { "name": "我的微官网", "type": "view", "url": "http://mweb.taobao.com" }, {"name": "我的特惠品", "type": "view" ,"url": "http://mpromotion.taobao.com" }, { "name": "我的活动", "type": "view", "url": "http://test.we.app.jae.m.taobao.com?seller_nick=test&seller_id=123124" }] }, { "name": "客服", "sub_button": [  { "name": "客服", "type": "wangwang", "wangwang": "商家测试帐号xx" }, {{ "name": "电话", "type": "tel", "tel": "66668888" }] }]
 	 **/
 	private $menuString;
 	

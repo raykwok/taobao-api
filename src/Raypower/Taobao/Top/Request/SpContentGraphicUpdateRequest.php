@@ -3,7 +3,7 @@
  * TOP API: taobao.sp.content.graphic.update request
  * 
  * @author auto create
- * @since 1.0, 2014-06-25 16:37:06
+ * @since 1.0, 2014-09-26 12:58:31
  */
 class SpContentGraphicUpdateRequest
 {
@@ -29,6 +29,7 @@ value:表示图文类型的元素值。
 	
 	/** 
 	 * 封面图片地址
+图文的封面尺寸不能低于680*680，否则该条图文将无法同步至微淘
 图片地址必须匹配正则表达式:http://(img01|img02|img03|img04|img1|img2|img3|img4)\.(taobaocdn|tbcdn)\.(com|net|cn).*
 	 **/
 	private $coverpicurl;
@@ -60,7 +61,7 @@ value:表示图文类型的元素值。
 	private $tags;
 	
 	/** 
-	 * 内容标题,标题的长度限制为(0,30](单位是字符，不区分中英文)<br /> 支持最大长度为：30<br /> 支持的最大列表长度为：30
+	 * 内容标题,标题的长度限制为(0,32](单位是字符，不区分中英文)<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
 	 **/
 	private $title;
 	
@@ -186,7 +187,7 @@ value:表示图文类型的元素值。
 		RequestCheckUtil::checkNotNull($this->siteKey,"siteKey");
 		RequestCheckUtil::checkMaxLength($this->siteKey,32,"siteKey");
 		RequestCheckUtil::checkNotNull($this->title,"title");
-		RequestCheckUtil::checkMaxLength($this->title,30,"title");
+		RequestCheckUtil::checkMaxLength($this->title,32,"title");
 	}
 	
 	public function putOtherTextParam($key, $value) {

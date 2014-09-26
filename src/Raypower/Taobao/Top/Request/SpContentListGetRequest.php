@@ -1,27 +1,23 @@
 <?php namespace Raypower\Taobao\Top\Request;
 /**
- * TOP API: taobao.sp.content.getpage request
+ * TOP API: taobao.sp.content.list.get request
  * 
  * @author auto create
  * @since 1.0, 2014-09-26 12:58:31
  */
-class SpContentGetpageRequest
+class SpContentListGetRequest
 {
 	/** 
 	 * JOSN格式的分页参数：
 page： 查询起始页 >=1 
 rows： 分页大小 <= 50
-sort : 排序字段，支持的排序类型包括：gmtModified – 最后修改时间；likeNum – 喜欢数；viewNum – 浏览数；
+sort : 排序字段(如果没有指定排序方式，默认按修改时间倒序)，支持的排序类型包括：gmtModified – 最后修改时间；likeNum – 喜欢数；viewNum – 浏览数；
 order：排序方式：asc – 顺序；desc – 倒序
 	 **/
 	private $pagerequest;
 	
 	/** 
-	 * JSON格式的查询条件：
-type(Integer，选填) ：内容类型，包括三种： 1 -- 宝贝，2 -- 图片，3 -- 自定义，4 -- 图文；
-   className(String，选填)：内容的自定义分类名称；
-   tags(String，选填)：内容的自定义标签名称，多个标签以逗号“,”分割。如果设置了多个标签，则他们是或的关系；
-   title(String，选填): 内容标题，此条件为模糊搜索， 慎用，可能比较慢；
+	 * JSON格式的查询条件： type(Integer，选填) ：内容类型，包括四种： 1 -- 宝贝，2 -- 图片，3 -- 自定义，4 -- 图文； className(String，选填)：内容的自定义分类名称；tags(String，选填)：内容的自定义标签名称，多个标签以逗号“,”分割。如果设置了多个标签，则他们是或的关系；title(String，选填): 内容标题，此条件为模糊搜索，慎用，可能比较慢；
 	 **/
 	private $query;
 	
@@ -67,7 +63,7 @@ type(Integer，选填) ：内容类型，包括三种： 1 -- 宝贝，2 -- 图�
 
 	public function getApiMethodName()
 	{
-		return "taobao.sp.content.getpage";
+		return "taobao.sp.content.list.get";
 	}
 	
 	public function getApiParas()

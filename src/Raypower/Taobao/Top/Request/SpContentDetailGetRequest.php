@@ -1,11 +1,11 @@
 <?php namespace Raypower\Taobao\Top\Request;
 /**
- * TOP API: taobao.sp.content.deletebyid request
+ * TOP API: taobao.sp.content.detail.get request
  * 
  * @author auto create
  * @since 1.0, 2014-09-26 12:58:31
  */
-class SpContentDeletebyidRequest
+class SpContentDetailGetRequest
 {
 	/** 
 	 * 内容的主键ID
@@ -43,7 +43,7 @@ class SpContentDeletebyidRequest
 
 	public function getApiMethodName()
 	{
-		return "taobao.sp.content.deletebyid";
+		return "taobao.sp.content.detail.get";
 	}
 	
 	public function getApiParas()

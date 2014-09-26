@@ -1,33 +1,33 @@
 <?php namespace Raypower\Taobao\Top\Request;
 /**
- * TOP API: taobao.sp.content.deletebyid request
+ * TOP API: taobao.sp.shop.info.get request
  * 
  * @author auto create
  * @since 1.0, 2014-09-26 12:58:31
  */
-class SpContentDeletebyidRequest
+class SpShopInfoGetRequest
 {
 	/** 
-	 * 内容的主键ID
+	 * 卖家Nick对应的Userid
 	 **/
-	private $id;
+	private $sellerId;
 	
 	/** 
-	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 每个站点的唯一Key(加密的site id)
 	 **/
 	private $siteKey;
 	
 	private $apiParas = array();
 	
-	public function setId($id)
+	public function setSellerId($sellerId)
 	{
-		$this->id = $id;
-		$this->apiParas["id"] = $id;
+		$this->sellerId = $sellerId;
+		$this->apiParas["seller_id"] = $sellerId;
 	}
 
-	public function getId()
+	public function getSellerId()
 	{
-		return $this->id;
+		return $this->sellerId;
 	}
 
 	public function setSiteKey($siteKey)
@@ -43,7 +43,7 @@ class SpContentDeletebyidRequest
 
 	public function getApiMethodName()
 	{
-		return "taobao.sp.content.deletebyid";
+		return "taobao.sp.shop.info.get";
 	}
 	
 	public function getApiParas()
@@ -54,9 +54,8 @@ class SpContentDeletebyidRequest
 	public function check()
 	{
 		
-		RequestCheckUtil::checkNotNull($this->id,"id");
+		RequestCheckUtil::checkNotNull($this->sellerId,"sellerId");
 		RequestCheckUtil::checkNotNull($this->siteKey,"siteKey");
-		RequestCheckUtil::checkMaxLength($this->siteKey,32,"siteKey");
 	}
 	
 	public function putOtherTextParam($key, $value) {

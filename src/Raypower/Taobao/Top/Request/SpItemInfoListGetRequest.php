@@ -1,19 +1,19 @@
 <?php namespace Raypower\Taobao\Top\Request;
 /**
- * TOP API: taobao.sp.content.deletebyid request
+ * TOP API: taobao.sp.item.info.list.get request
  * 
  * @author auto create
  * @since 1.0, 2014-09-26 12:58:31
  */
-class SpContentDeletebyidRequest
+class SpItemInfoListGetRequest
 {
 	/** 
-	 * 内容的主键ID
+	 * 商品ID,可批量查询, 多个商品ID中间用逗号分隔, 最多可查20个id, ID之间不能有空格
 	 **/
 	private $id;
 	
 	/** 
-	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 每个站点的唯一Key(加密的site id)
 	 **/
 	private $siteKey;
 	
@@ -43,7 +43,7 @@ class SpContentDeletebyidRequest
 
 	public function getApiMethodName()
 	{
-		return "taobao.sp.content.deletebyid";
+		return "taobao.sp.item.info.list.get";
 	}
 	
 	public function getApiParas()
@@ -56,7 +56,6 @@ class SpContentDeletebyidRequest
 		
 		RequestCheckUtil::checkNotNull($this->id,"id");
 		RequestCheckUtil::checkNotNull($this->siteKey,"siteKey");
-		RequestCheckUtil::checkMaxLength($this->siteKey,32,"siteKey");
 	}
 	
 	public function putOtherTextParam($key, $value) {
