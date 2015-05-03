@@ -3,22 +3,20 @@
  * TOP API: taobao.sp.content.getcount request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class SpContentGetcountRequest
 {
 	/** 
 	 * JSON格式的查询条件：
-type(Integer，选填) ：内容类型，包括三种： 1 -- 宝贝，2 -- 图片，3 -- 心得；0或者不填则获取所有类型的内容；
-   className(String，选填)：内容的自定义分类名称；
+type(Integer，选填) ：内容类型，包括三种： 1 -- 宝贝，4--图文；0或者不填则获取所有类型的内容；
    tags(String，选填)：内容的自定义标签名称，多个标签以逗号“,”分割。如果设置了多个标签，则他们是或的关系；
    title(String，选填): 内容标题，此条件为模糊搜索， 慎用，可能比较慢；
-   comments (String，选填)：内容的推荐理由，此条件为模糊搜索，慎用，可能会比较慢
 	 **/
 	private $query;
 	
 	/** 
-	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 站长Key
 	 **/
 	private $siteKey;
 	

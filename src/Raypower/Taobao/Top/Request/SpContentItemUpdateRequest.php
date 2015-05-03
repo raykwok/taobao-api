@@ -3,17 +3,17 @@
  * TOP API: taobao.sp.content.item.update request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class SpContentItemUpdateRequest
 {
 	/** 
-	 * 内容的自定义分类，数值为文本内容，主要用于区分内容的分类（譬如连衣裙、T恤、阿迪达斯等），分类名称的长度限制为(0,5] (单位是字符，不区分中英文)，分类名称中不能包含非法内容，且一个站点下所拥有的总自定义分类数量不能超过16个<br /> 支持最大长度为：5<br /> 支持的最大列表长度为：5
+	 * 内容的自定义分类，数值为文本内容，主要用于区分内容的分类（譬如连衣裙、T恤、阿迪达斯等），分类名称的长度限制为(0,5] (单位是字符，不区分中英文)，分类名称中不能包含非法内容，且一个站点下所拥有的总自定义分类数量不能超过16个
 	 **/
 	private $classname;
 	
 	/** 
-	 * 内容的推荐理由。数值为文本内容,推荐理由的长度限制为[0,140](单位是字符，不区分中英文)，推荐理由中不能含有非法内容，不能含有恶意脚本<br /> 支持最大长度为：140<br /> 支持的最大列表长度为：140
+	 * 内容的推荐理由。数值为文本内容,推荐理由的长度限制为[0,140](单位是字符，不区分中英文)，推荐理由中不能含有非法内容，不能含有恶意脚本
 	 **/
 	private $comments;
 	
@@ -39,7 +39,7 @@ class SpContentItemUpdateRequest
 	private $itemId;
 	
 	/** 
-	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 站长Key
 	 **/
 	private $siteKey;
 	
@@ -50,7 +50,7 @@ class SpContentItemUpdateRequest
 	private $tags;
 	
 	/** 
-	 * 内容标题,标题的长度限制为(0,32](单位是字符，不区分中英文)<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 内容标题,标题的长度限制为(0,22](单位是字)
 	 **/
 	private $title;
 	
@@ -168,7 +168,6 @@ class SpContentItemUpdateRequest
 	public function check()
 	{
 		
-		RequestCheckUtil::checkNotNull($this->classname,"classname");
 		RequestCheckUtil::checkMaxLength($this->classname,5,"classname");
 		RequestCheckUtil::checkNotNull($this->comments,"comments");
 		RequestCheckUtil::checkMaxLength($this->comments,140,"comments");
@@ -178,7 +177,7 @@ class SpContentItemUpdateRequest
 		RequestCheckUtil::checkNotNull($this->siteKey,"siteKey");
 		RequestCheckUtil::checkMaxLength($this->siteKey,32,"siteKey");
 		RequestCheckUtil::checkNotNull($this->title,"title");
-		RequestCheckUtil::checkMaxLength($this->title,32,"title");
+		RequestCheckUtil::checkMaxLength($this->title,44,"title");
 	}
 	
 	public function putOtherTextParam($key, $value) {

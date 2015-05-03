@@ -3,12 +3,12 @@
  * TOP API: taobao.sp.content.graphic.update request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class SpContentGraphicUpdateRequest
 {
 	/** 
-	 * 内容的自定义分类，数值为文本内容，主要用于区分内容的分类（譬如连衣裙、T恤、阿迪达斯等），分类名称的长度限制为(0,5] (单位是字符，不区分中英文)，分类名称中不能包含非法内容，且一个站点下所拥有的总自定义分类数量不能超过16个<br /> 支持最大长度为：5<br /> 支持的最大列表长度为：5
+	 * 内容的自定义分类，数值为文本内容，主要用于区分内容的分类（譬如连衣裙、T恤、阿迪达斯等），分类名称的长度限制为(0,5] (单位是字符，不区分中英文)，分类名称中不能包含非法内容，且一个站点下所拥有的总自定义分类数量不能超过16个
 	 **/
 	private $classname;
 	
@@ -28,9 +28,7 @@ value:表示图文类型的元素值。
 	private $contents;
 	
 	/** 
-	 * 封面图片地址
-图文的封面尺寸不能低于680*680，否则该条图文将无法同步至微淘
-图片地址必须匹配正则表达式:http://(img01|img02|img03|img04|img1|img2|img3|img4)\.(taobaocdn|tbcdn)\.(com|net|cn).*
+	 * 封面图片地址（推送到微淘必须设置这个属性，且尺寸不能小于（750*750）） 图文的封面尺寸不能低于680*680，否则该条图文将无法同步至微淘 图片地址必须匹配正则表达式:http://(img01|img02|img03|img04|img1|img2|img3|img4)\.(taobaocdn|tbcdn)\.(com|net|cn).*
 	 **/
 	private $coverpicurl;
 	
@@ -50,7 +48,7 @@ value:表示图文类型的元素值。
 	private $intimeline;
 	
 	/** 
-	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 站长Key
 	 **/
 	private $siteKey;
 	
@@ -61,7 +59,7 @@ value:表示图文类型的元素值。
 	private $tags;
 	
 	/** 
-	 * 内容标题,标题的长度限制为(0,32](单位是字符，不区分中英文)<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 内容标题,标题的长度限制为(0,22](单位是字)
 	 **/
 	private $title;
 	
@@ -179,7 +177,6 @@ value:表示图文类型的元素值。
 	public function check()
 	{
 		
-		RequestCheckUtil::checkNotNull($this->classname,"classname");
 		RequestCheckUtil::checkMaxLength($this->classname,5,"classname");
 		RequestCheckUtil::checkNotNull($this->contents,"contents");
 		RequestCheckUtil::checkNotNull($this->detailurl,"detailurl");

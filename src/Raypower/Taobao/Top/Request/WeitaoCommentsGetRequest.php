@@ -3,33 +3,33 @@
  * TOP API: taobao.weitao.comments.get request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class WeitaoCommentsGetRequest
 {
 	/** 
-	 * 翻页时当前页，如果time_stamp参数不设置，此值必需传入<br /> 支持最小值为：1
+	 * 翻页时当前页，如果time_stamp参数不设置，此值必需传入
 	 **/
 	private $currentPage;
 	
 	/** 
-	 * 向前后翻页，direction=0，向上翻;direction=1 向下翻<br /> 支持最大值为：1<br /> 支持最小值为：0<br /> 支持的最大列表长度为：2
+	 * 向前后翻页，direction=0，向上翻;direction=1 向下翻
 	 **/
 	private $direction;
 	
 	/** 
-	 * 查询评论所对应feed的Id<br /> 支持最小值为：1
+	 * 查询评论所对应feed的Id
 	 **/
 	private $feedId;
 	
 	/** 
-	 * 翻页查询一页大小<br /> 支持最大值为：100<br /> 支持最小值为：1
+	 * 翻页查询一页大小
 	 **/
 	private $pageSize;
 	
 	/** 
 	 * 翻页时间戳，没有时间参数，则说明是跳页查询或者第一页，current_page有效，direction无效；有时间参数，则说明是上下翻页，current_page无效，direction有效；
-如果current_page=1，则time_stamp无效，强制刷新为第一页。<br /> 支持的最大列表长度为：15
+如果current_page=1，则time_stamp无效，强制刷新为第一页。
 	 **/
 	private $timeStamp;
 	

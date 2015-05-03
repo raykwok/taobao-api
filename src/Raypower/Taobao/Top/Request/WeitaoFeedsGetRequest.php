@@ -3,7 +3,7 @@
  * TOP API: taobao.weitao.feeds.get request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class WeitaoFeedsGetRequest
 {
@@ -13,17 +13,17 @@ class WeitaoFeedsGetRequest
 	private $currentPage;
 	
 	/** 
-	 * 向前后翻页，direction=1，向上翻;direction=0 向下翻<br /> 支持最大值为：1<br /> 支持最小值为：0<br /> 支持的最大列表长度为：2
+	 * 向前后翻页，direction=1，向上翻;direction=0 向下翻
 	 **/
 	private $direction;
 	
 	/** 
-	 * 翻页查询一页大小<br /> 支持最大值为：100<br /> 支持最小值为：1<br /> 支持的最大列表长度为：3
+	 * 翻页查询一页大小
 	 **/
 	private $pageSize;
 	
 	/** 
-	 * 翻页时间戳，没有时间参数，则说明是跳页查询或者第一页，current_page有效，direction无效；有时间参数，则说明是上下翻页，current_page无效，direction有效<br /> 支持的最大列表长度为：15
+	 * 翻页时间戳，没有时间参数，则说明是跳页查询或者第一页，current_page有效，direction无效；有时间参数，则说明是上下翻页，current_page无效，direction有效
 	 **/
 	private $timeStamp;
 	

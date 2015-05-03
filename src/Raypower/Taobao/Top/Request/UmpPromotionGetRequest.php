@@ -3,10 +3,15 @@
  * TOP API: taobao.ump.promotion.get request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class UmpPromotionGetRequest
 {
+	/** 
+	 * 渠道来源，第三方站点
+	 **/
+	private $channelKey;
+	
 	/** 
 	 * 商品id
 	 **/
@@ -14,6 +19,17 @@ class UmpPromotionGetRequest
 	
 	private $apiParas = array();
 	
+	public function setChannelKey($channelKey)
+	{
+		$this->channelKey = $channelKey;
+		$this->apiParas["channel_key"] = $channelKey;
+	}
+
+	public function getChannelKey()
+	{
+		return $this->channelKey;
+	}
+
 	public function setItemId($itemId)
 	{
 		$this->itemId = $itemId;

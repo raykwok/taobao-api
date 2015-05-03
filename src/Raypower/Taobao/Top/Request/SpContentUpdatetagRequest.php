@@ -3,22 +3,22 @@
  * TOP API: taobao.sp.content.updatetag request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class SpContentUpdatetagRequest
 {
 	/** 
-	 * 新的标签名称<br /> 支持最大长度为：6<br /> 支持的最大列表长度为：6
+	 * 新的标签名称
 	 **/
 	private $newname;
 	
 	/** 
-	 * 旧的标签名称<br /> 支持最大长度为：6<br /> 支持的最大列表长度为：6
+	 * 旧的标签名称
 	 **/
 	private $oldname;
 	
 	/** 
-	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 站长Key
 	 **/
 	private $siteKey;
 	

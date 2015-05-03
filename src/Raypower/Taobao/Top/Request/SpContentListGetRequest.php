@@ -3,7 +3,7 @@
  * TOP API: taobao.sp.content.list.get request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class SpContentListGetRequest
 {
@@ -22,7 +22,7 @@ order：排序方式：asc – 顺序；desc – 倒序
 	private $query;
 	
 	/** 
-	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 站长Key
 	 **/
 	private $siteKey;
 	

@@ -3,17 +3,17 @@
  * TOP API: taobao.sp.content.custom.publish request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class SpContentCustomPublishRequest
 {
 	/** 
-	 * 内容的自定义分类，数值为文本内容，主要用于区分内容的分类（譬如连衣裙、T恤、阿迪达斯等），分类名称的长度限制为(0,5] (单位是字符，不区分中英文)，分类名称中不能包含非法内容，且一个站点下所拥有的总自定义分类数量不能超过16个<br /> 支持最大长度为：5<br /> 支持的最大列表长度为：5
+	 * 内容的自定义分类，数值为文本内容，主要用于区分内容的分类（譬如连衣裙、T恤、阿迪达斯等），分类名称的长度限制为(0,5] (单位是字符，不区分中英文)，分类名称中不能包含非法内容，且一个站点下所拥有的总自定义分类数量不能超过16个
 	 **/
 	private $classname;
 	
 	/** 
-	 * 自定义内容的正文，数值为文本内容（html形式），长度限制为[100,20000] (单位是字符，不区分中英文), 内容中不能有外链，不能有恶意脚本；内容中包含的商品链接系统自自动提取并保存起来;多个商品链接以空格隔开(如 href=http://detail.tmall.com/item.htm?id=35743839682 href=http://item.taobao.com/item.htm?id=36366644805 )<br /> 支持最大长度为：20000<br /> 支持的最大列表长度为：20000
+	 * 自定义内容的正文，数值为文本内容（html形式），长度限制为[100,20000] (单位是字符，不区分中英文), 内容中不能有外链，不能有恶意脚本；内容中包含的商品链接系统自自动提取并保存起来;多个商品链接以空格隔开(如 href=http://detail.tmall.com/item.htm?id=35743839682 href=http://item.taobao.com/item.htm?id=36366644805 )
 	 **/
 	private $content;
 	
@@ -23,7 +23,7 @@ class SpContentCustomPublishRequest
 	private $detailurl;
 	
 	/** 
-	 * 站长Key<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 站长Key
 	 **/
 	private $siteKey;
 	
@@ -34,7 +34,7 @@ class SpContentCustomPublishRequest
 	private $tags;
 	
 	/** 
-	 * 内容标题,标题的长度限制为(0,32](单位是字符，不区分中英文)<br /> 支持最大长度为：32<br /> 支持的最大列表长度为：32
+	 * 内容标题,标题的长度限制为(0,32](单位是字符，不区分中英文)
 	 **/
 	private $title;
 	

@@ -3,12 +3,12 @@
  * TOP API: taobao.weitao.feed.get request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class WeitaoFeedGetRequest
 {
 	/** 
-	 * feed的Id<br /> 支持最小值为：1
+	 * feed的Id
 	 **/
 	private $feedId;
 	

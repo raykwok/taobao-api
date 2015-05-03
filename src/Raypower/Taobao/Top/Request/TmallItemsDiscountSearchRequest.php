@@ -3,7 +3,7 @@
  * TOP API: tmall.items.discount.search request
  * 
  * @author auto create
- * @since 1.0, 2014-09-26 12:58:31
+ * @since 1.0, 2015.04.24
  */
 class TmallItemsDiscountSearchRequest
 {
@@ -28,6 +28,16 @@ class TmallItemsDiscountSearchRequest
 	private $endPrice;
 	
 	/** 
+	 * 固定参数from=wm，描述该请求来自无线客户端。请不要填写其他值。
+	 **/
+	private $from;
+	
+	/** 
+	 * 过滤折扣宝贝时，miaosha=1
+	 **/
+	private $miaosha;
+	
+	/** 
 	 * 是否包邮，-1为包邮
 	 **/
 	private $postFee;
@@ -49,7 +59,7 @@ pt: 按发布时间排序.
 	private $sort;
 	
 	/** 
-	 * 可以用该字段来实现分页功能。表示查询起始位置，默认从第0条开始，start=10,表示从第10条数据开始查询，start不得大于1000。<br /> 支持最大值为：1000
+	 * 可以用该字段来实现分页功能。表示查询起始位置，默认从第0条开始，start=10,表示从第10条数据开始查询，start不得大于1000。
 	 **/
 	private $start;
 	
@@ -102,6 +112,28 @@ pt: 按发布时间排序.
 	public function getEndPrice()
 	{
 		return $this->endPrice;
+	}
+
+	public function setFrom($from)
+	{
+		$this->from = $from;
+		$this->apiParas["from"] = $from;
+	}
+
+	public function getFrom()
+	{
+		return $this->from;
+	}
+
+	public function setMiaosha($miaosha)
+	{
+		$this->miaosha = $miaosha;
+		$this->apiParas["miaosha"] = $miaosha;
+	}
+
+	public function getMiaosha()
+	{
+		return $this->miaosha;
 	}
 
 	public function setPostFee($postFee)
@@ -172,6 +204,8 @@ pt: 按发布时间排序.
 	public function check()
 	{
 		
+		RequestCheckUtil::checkMaxValue($this->miaosha,1,"miaosha");
+		RequestCheckUtil::checkMinValue($this->miaosha,1,"miaosha");
 		RequestCheckUtil::checkMaxValue($this->start,1000,"start");
 	}
 	
